@@ -1,4 +1,4 @@
 ## aoc 
 
-Advent of Code Meta Repo.
+Advent of Code Mono Repo.
 
