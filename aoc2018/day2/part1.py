@@ -1,20 +1,19 @@
 from collections import Counter 
+import fileinput
 
+lines = [x.strip() for x in fileinput.input()]
 
 def main():
-    with open('input.txt','r') as f:
-        p=f.read().splitlines()
+    has2 = 0 
+    has3 = 0 
 
-    count2=0
-    count3=0
+    for line in lines:
+        c = Counter(line).values()
+        has2 += 2 in c 
+        has3 += 3 in c 
+    
+    print(has2*has3)
 
-    for item in p:
-        count = Counter(item)
-        if len([k for k,v in count.items() if v==2])>0:
-            count2+=1
-        if len([k for k,v in count.items() if v==3])>0:
-            count3+=1
-
-    print(count2*count3)
 
 main()
+
